@@ -22,7 +22,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.util.Arrays.*;
+import static java.util.Arrays.asList;
 
 /**
  * <b>Date:</b> 16-Feb-2008<br>
@@ -158,6 +158,7 @@ public final class Selection {
             "**/test-output/**",
             "**/release.properties",
             "**/pom.xml",
+            "**/dependency-reduced-pom.xml",
 
             // code coverage tools
             "**/cobertura.ser",
