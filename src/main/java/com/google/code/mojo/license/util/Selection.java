@@ -201,6 +201,10 @@ public final class Selection {
             "**/*.tar",
             "**/*.tar.gz",
             "**/*.tar.bz2",
+            "**/*.gz",
+
+            // binary files - documents
+            "**/*.xls",
 
             // ServiceLoader files
             "**/META-INF/services/**"

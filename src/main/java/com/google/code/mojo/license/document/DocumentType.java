@@ -85,6 +85,7 @@ public enum DocumentType {
     HAML("haml", HeaderType.HAML_STYLE),
     SCAML("scaml", HeaderType.HAML_STYLE),
     VB("bas", HeaderType.HAML_STYLE),
+    TLD("tld", HeaderType.XML_STYLE),
     UNKNOWN("", HeaderType.UNKNOWN);
 
     ////////////////////////////////////
