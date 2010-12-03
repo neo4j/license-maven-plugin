@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author Mathieu Carbou (mathieu.carbou@gmail.com)
@@ -55,6 +55,30 @@ public final class StrictTest {
         }
         System.out.println(check.missingHeaders);
         assertEquals(check.missingHeaders.size(), 4);
+    }
+
+    @Test
+    public void test_space() throws Exception {
+        MavenProjectStub project = new MavenProjectStub();
+
+        /*LicenseFormatMojo format = new LicenseFormatMojo();
+        format.basedir = new File("src/test/resources/check/strict");
+        format.header = "src/test/resources/test-header1-diff.txt";
+        format.project = project;
+        format.execute();*/
+
+        // all the headers are by default checked not strictlty
+        LicenseCheckMojo check = new LicenseCheckMojo();
+        check.basedir = new File("src/test/resources/check/strict");
+        check.header = "src/test/resources/test-header1-diff.txt";
+        check.project = project;
+        check.execute();
+
+        // all the headers are by default checked not strictlty
+        check.strictCheck = true;
+        check.execute();
+        System.out.println(check.missingHeaders);
+        assertEquals(check.missingHeaders.size(), 0);
     }
 
 }

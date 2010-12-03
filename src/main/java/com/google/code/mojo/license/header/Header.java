@@ -22,7 +22,8 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.google.code.mojo.license.util.FileUtils.*;
+import static com.google.code.mojo.license.util.FileUtils.read;
+import static com.google.code.mojo.license.util.FileUtils.remove;
 
 /**
  * The <code>Header</code> class wraps the license template file, the one which have to be outputted inside the other
@@ -105,7 +106,7 @@ public final class Header {
             newHeader.append(type.getEndLine().replace("EOL", eol(unix)));
             newHeader.append(eol(unix));
         }
-        return newHeader.append(eol(unix)).toString();
+        return newHeader.toString();
     }
 
     @Override
