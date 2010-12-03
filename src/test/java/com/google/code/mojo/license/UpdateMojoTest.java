@@ -130,7 +130,7 @@ public final class UpdateMojoTest {
 
         assertEquals(FileUtils.read(new File(tmp, "test.asp"), System.getProperty("file.encoding")), "<%\n" +
                 "    My @Copyright license 2\n" +
-                "%>\n" +
+                "%>" +
                 "\n" +
                 "asp code");
     }
