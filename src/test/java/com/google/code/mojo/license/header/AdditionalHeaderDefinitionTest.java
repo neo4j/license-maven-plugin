@@ -25,7 +25,8 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNull;
 
 /**
  * @author Mathieu Carbou (mathieu.carbou@gmail.com)
@@ -37,7 +38,7 @@ public final class AdditionalHeaderDefinitionTest {
                 .addTag("xquery")
                 .addTag("firstLine").addText("(:")
                 .addTag("beforeEachLine").addText(" : ")
-                .addTag("endLine").addText(" :)")
+                .addTag("endLine").addText(" :)EOL")
                 .addTag("firstLineDetectionPattern").addText("\\(\\:")
                 .addTag("lastLineDetectionPattern").addText("\\:\\)")
                 .addTag("allowBlankLines").addText("false")
@@ -91,7 +92,7 @@ public final class AdditionalHeaderDefinitionTest {
                 .addTag("csregion")
                 .addTag("firstLine").addText("#region LicenseEOL/**")
                 .addTag("beforeEachLine").addText(" * ")
-                .addTag("endLine").addText(" */EOL#endregion")
+                .addTag("endLine").addText(" */EOL#endregionEOL")
                 .addTag("firstLineDetectionPattern").addText("#region.*^EOL/\\*\\*.*$")
                 .addTag("lastLineDetectionPattern").addText("\\*/EOL#endregion")
                 .addTag("allowBlankLines").addText("false")

@@ -33,31 +33,31 @@ public enum HeaderType {
     //              FirstLine           Before              EndLine             SkipLine                    FirstLineDetection              LastLineDetection       allowBlankLines isMultiline
     //generic
     JAVADOC_STYLE("/**", " * ", " */", null, "(\\s|\\t)*/\\*.*$", ".*\\*/(\\s|\\t)*$", false, true),
-    SCRIPT_STYLE("#", "# ", "#", "^#!.*$", "#.*$", "#.*$", false, false),
-    HAML_STYLE("-#", "-# ", "-#", "^-#!.*$", "-#.*$", "-#.*$", false, false),
+    SCRIPT_STYLE("#", "# ", "#EOL", "^#!.*$", "#.*$", "#.*$", false, false),
+    HAML_STYLE("-#", "-# ", "-#EOL", "^-#!.*$", "-#.*$", "-#.*$", false, false),
     XML_STYLE("<!--EOL", "    ", "EOL-->", "^<\\?xml.*>$", "(\\s|\\t)*<!--.*$", ".*-->(\\s|\\t)*$", true, true),
-    SEMICOLON_STYLE(";", "; ", ";", null, ";.*$", ";.*$", false, false),
-    APOSTROPHE_STYLE("'", "' ", "'", null, "'.*$", "'.*$", false, false),
-    EXCLAMATION_STYLE("!", "! ", "!", null, "!.*$", "!.*$", false, false),
-    DOUBLEDASHES_STYLE("--", "-- ", "--", null, "--.*$", "--.*$", false, false),
+    SEMICOLON_STYLE(";", "; ", ";EOL", null, ";.*$", ";.*$", false, false),
+    APOSTROPHE_STYLE("'", "' ", "'EOL", null, "'.*$", "'.*$", false, false),
+    EXCLAMATION_STYLE("!", "! ", "!EOL", null, "!.*$", "!.*$", false, false),
+    DOUBLEDASHES_STYLE("--", "-- ", "--EOL", null, "--.*$", "--.*$", false, false),
     SLASHSTAR_STYLE("/*", " * ", " */", null, "(\\s|\\t)*/\\*.*$", ".*\\*/(\\s|\\t)*$", false, true),
     BRACESSTAR_STYLE("\\{*", " * ", " *\\}", null, "(\\s|\\t)*\\{\\*.*$", ".*\\*\\}(\\s|\\t)*$", false, true),
     SHARPSTAR_STYLE("#*", " * ", " *#", null, "(\\s|\\t)*#\\*.*$", ".*\\*#(\\s|\\t)*$", false, true),
-    DOUBLETILDE_STYLE("~~", "~~ ", "~~", null, "~~.*$", "~~.*$", false, false),
+    DOUBLETILDE_STYLE("~~", "~~ ", "~~EOL", null, "~~.*$", "~~.*$", false, false),
     DYNASCRIPT_STYLE("<%--EOL", "    ", "EOL--%>", null, "(\\s|\\t)*<%--.*$", ".*--%>(\\s|\\t)*$", true, true),
     DYNASCRIPT3_STYLE("<!---EOL", "    ", "EOL--->", null, "(\\s|\\t)*<!---.*$", ".*--->(\\s|\\t)*$", true, true),
-    PERCENT3_STYLE("%%%", "%%% ", "%%%", null, "%%%.*$", "%%%.*$", false, false),
-    EXCLAMATION3_STYLE("!!!", "!!! ", "!!!", null, "!!!.*$", "!!!.*$", false, false),
+    PERCENT3_STYLE("%%%", "%%% ", "%%%EOL", null, "%%%.*$", "%%%.*$", false, false),
+    EXCLAMATION3_STYLE("!!!", "!!! ", "!!!EOL", null, "!!!.*$", "!!!.*$", false, false),
 
-    DOUBLESLASH_STYLE("//", "// ", "//", null, "//.*$", "//.*$", false, false),
+    DOUBLESLASH_STYLE("//", "// ", "//EOL", null, "//.*$", "//.*$", false, false),
     // non generic
     PHP("/*", " * ", " */", "^<\\?php.*$", "(\\s|\\t)*/\\*.*$", ".*\\*/(\\s|\\t)*$", false, true),
     ASP("<%", "    ", "%>", null, "(\\s|\\t)*<%[^@].*$", ".*%>(\\s|\\t)*$", true, true),
     LUA("--[[EOL", "    ", "EOL]]", null, "--\\[\\[$", "\\]\\]$", true, true),
     FTL("<#--EOL", "    ", "EOL-->", null, "(\\s|\\t)*<#--.*$", ".*-->(\\s|\\t)*$", true, true),
     FTL_ALT("[#--EOL", "    ", "EOL--]", "\\[#ftl(\\s.*)?\\]", "(\\s|\\t)*\\[#--.*$", ".*--\\](\\s|\\t)*$", true, true),
-    TEXT("====", "    ", "====", null, "====.*$", "====.*$", true, true),
-    BATCH("@REM", "@REM ", "@REM", null, "@REM.*$", "@REM.*$", false, false),
+    TEXT("====", "    ", "====EOL", null, "====.*$", "====.*$", true, true),
+    BATCH("@REM", "@REM ", "@REMEOL", null, "@REM.*$", "@REM.*$", false, false),
     // unknown
     UNKNOWN("", "", "", null, null, null, false, false);
 

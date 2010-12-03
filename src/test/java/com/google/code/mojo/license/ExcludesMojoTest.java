@@ -44,7 +44,7 @@ public final class ExcludesMojoTest {
         check.basedir = new File("src/test/resources/check");
         check.header = "header.txt";
         check.project = new MavenProjectStub();
-        check.excludes = new String[]{"**/*.txt", "**/*.xml"};
+        check.excludes = new String[]{"**/*.txt", "**/*.xml", "**/*.java"};
         check.strictCheck = true;
         check.execute();
     }

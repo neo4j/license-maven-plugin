@@ -18,11 +18,12 @@ package com.google.code.mojo.license;
 
 import com.google.code.mojo.license.util.FileUtils;
 import org.apache.maven.plugin.testing.stubs.MavenProjectStub;
-import static org.testng.Assert.*;
 import org.testng.annotations.Test;
 
 import java.io.File;
 import java.util.HashMap;
+
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author Mathieu Carbou (mathieu.carbou@gmail.com)
@@ -91,7 +92,7 @@ public final class UpdateMojoTest {
                 "/*\r\n" +
                 " * My @Copyright license 2\r\n" +
                 " */\r\n" +
-                "\r\n\r\n" +
+                "\r\n" +
                 "class Conference extends Service {}\r\n" +
                 "\r\n" +
                 "?>\r\n");
@@ -101,7 +102,7 @@ public final class UpdateMojoTest {
                 "/*\r\n" +
                 " * My @Copyright license 2\r\n" +
                 " */\r\n" +
-                "\r\n\r\n" +
+                "\r\n" +
                 "class Conference extends Service {}\r\n" +
                 "\r\n" +
                 "?>\r\n");
