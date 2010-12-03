@@ -31,6 +31,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * @author Mathieu Carbou (mathieu.carbou@gmail.com)
  * @goal check
  * @phase verify
+ * @threadSafe
  */
 public final class LicenseCheckMojo extends AbstractLicenseMojo {
 

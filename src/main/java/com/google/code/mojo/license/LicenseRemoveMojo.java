@@ -28,6 +28,7 @@ import java.io.File;
  *
  * @author Mathieu Carbou (mathieu.carbou@gmail.com)
  * @goal remove
+ * @threadSafe
  */
 public final class LicenseRemoveMojo extends AbstractLicenseMojo {
 

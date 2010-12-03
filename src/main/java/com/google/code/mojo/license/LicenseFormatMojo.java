@@ -28,6 +28,7 @@ import java.io.File;
  *
  * @author Mathieu Carbou (mathieu.carbou@gmail.com)
  * @goal format
+ * @threadSafe
  */
 public final class LicenseFormatMojo extends AbstractLicenseMojo {
 
