@@ -10,7 +10,7 @@
 
     <groupId>com.mycila.maven-license-plugin</groupId>
     <artifactId>maven-license-plugin</artifactId>
-    <version>1.9.0</version>
+    <version>1.9.1-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <name>${project.artifactId}</name>
@@ -31,9 +31,9 @@
     -->
 
     <scm>
-        <connection>scm:svn:https://maven-license-plugin.googlecode.com/svn/tags/maven-license-plugin-1.9.0</connection>
-        <developerConnection>scm:svn:https://maven-license-plugin.googlecode.com/svn/tags/maven-license-plugin-1.9.0</developerConnection>
-        <url>https://maven-license-plugin.googlecode.com/svn/tags/maven-license-plugin-1.9.0</url>
+        <connection>scm:svn:https://maven-license-plugin.googlecode.com/svn/branches/maven-license-plugin-1.x.x</connection>
+        <developerConnection>scm:svn:https://maven-license-plugin.googlecode.com/svn/branches/maven-license-plugin-1.x.x</developerConnection>
+        <url>https://maven-license-plugin.googlecode.com/svn/branches/maven-license-plugin-1.x.x</url>
     </scm>
 
     <!--
