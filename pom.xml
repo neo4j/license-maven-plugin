@@ -31,9 +31,9 @@
     -->
 
     <scm>
-        <connection>scm:svn:https://maven-license-plugin.googlecode.com/svn/branches/maven-license-plugin-1.4.x</connection>
-        <developerConnection>scm:svn:https://maven-license-plugin.googlecode.com/svn/branches/maven-license-plugin-1.4.x</developerConnection>
-        <url>https://maven-license-plugin.googlecode.com/svn/branches/maven-license-plugin-1.4.x</url>
+        <connection>scm:svn:https://maven-license-plugin.googlecode.com/svn/branches/maven-license-plugin-1.x.x</connection>
+        <developerConnection>scm:svn:https://maven-license-plugin.googlecode.com/svn/branches/maven-license-plugin-1.x.x</developerConnection>
+        <url>https://maven-license-plugin.googlecode.com/svn/branches/maven-license-plugin-1.x.x</url>
     </scm>
 
     <!--
