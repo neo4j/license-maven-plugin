@@ -8,14 +8,14 @@
         <version>5</version>
     </parent>
 
-    <groupId>com.mycila.maven-license-plugin</groupId>
-    <artifactId>maven-license-plugin</artifactId>
-    <version>1.9.1-SNAPSHOT</version>
+    <groupId>org.neo4j.build.plugins</groupId>
+    <artifactId>license-maven-plugin</artifactId>
+    <version>1-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <name>${project.artifactId}</name>
     <description>Maven 2 plugin to check and update license headers in source files</description>
-    <url>http://code.google.com/p/${project.artifactId}/</url>
+    <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
     <inceptionYear>2008</inceptionYear>
 
     <!--
@@ -27,14 +27,14 @@
     </properties>
 
     <!--
-        Versionning system
+        Versioning system
     -->
 
-    <scm>
-        <connection>scm:svn:https://maven-license-plugin.googlecode.com/svn/branches/maven-license-plugin-1.x.x</connection>
-        <developerConnection>scm:svn:https://maven-license-plugin.googlecode.com/svn/branches/maven-license-plugin-1.x.x</developerConnection>
-        <url>https://maven-license-plugin.googlecode.com/svn/branches/maven-license-plugin-1.x.x</url>
-    </scm>
+  <scm>
+    <connection>scm:git:git://github.com/neo4j/license-maven-plugin.git</connection>
+    <developerConnection>scm:git:git@github.com:neo4j/license-maven-plugin.git</developerConnection>
+    <url>https://github.com/neo4j/license-maven-plugin</url>
+  </scm>
 
     <!--
          Project settings
@@ -103,19 +103,23 @@
         Distributions
     -->
 
-    <distributionManagement>
-        <repository>
-            <id>mc-release</id>
-            <name>Local Maven repository of releases</name>
-            <url>dav:https://mc-repo.googlecode.com/svn/maven2/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>mc-snapshot</id>
-            <name>Local Maven repository of snapshots</name>
-            <url>dav:https://mc-repo.googlecode.com/svn/maven2/snapshots</url>
-            <uniqueVersion>false</uniqueVersion>
-        </snapshotRepository>
-    </distributionManagement>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>snapshots@repo.neo4j.org</id>
+      <name>snapshots@repo.neo4j.org</name>
+      <uniqueVersion>false</uniqueVersion>
+      <url>https://repo.neo4j.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <name>Nexus Release Repository</name>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+    <site>
+      <id>neo4j-site</id>
+      <url>scpexe://components.neo4j.org/home/neo/components/${project.artifactId}/${project.version}</url>
+    </site>
+  </distributionManagement>
 
     <!--
         BUILD

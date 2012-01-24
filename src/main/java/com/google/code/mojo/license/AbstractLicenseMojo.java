@@ -33,7 +33,9 @@ import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.project.MavenProject;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -50,6 +52,7 @@ import static java.util.Arrays.deepToString;
 
 /**
  * <b>Date:</b> 18-Feb-2008<br> <b>Author:</b> Mathieu Carbou (mathieu.carbou@gmail.com)
+ * Modified by the Neo4j team.
  */
 public abstract class AbstractLicenseMojo extends AbstractMojo {
 
@@ -190,6 +193,21 @@ public abstract class AbstractLicenseMojo extends AbstractMojo {
     protected String encoding = System.getProperty("file.encoding");
 
     /**
+     * The name of a property used for a timestamp in the header.
+     * Note: this value won't be available as a Maven property.
+     * 
+     * @parameter
+     */
+    private String timestampPropertyName;
+
+    /**
+     * A {@link SimpleDateFormat} pattern to use for the timestamp.
+     * 
+     * @parameter default-value="yyyy"
+     */
+    private String timestampPattern;
+
+    /**
      * @parameter default-value="${project}"
      * @required
      * @readonly
@@ -208,6 +226,19 @@ public abstract class AbstractLicenseMojo extends AbstractMojo {
             if (!strictCheck) {
                 warn("Property 'strictCheck' is not enabled. Please consider adding <strictCheck>true</strictCheck> in your pom.xml file.");
                 warn("See http://code.google.com/p/maven-license-plugin/wiki/Configuration for more information.");
+            }
+            
+            if (timestampPropertyName != null)
+            {
+                SimpleDateFormat dateFormat = new SimpleDateFormat(timestampPattern);
+                String date = null;
+                try {
+                    date = dateFormat.format(new Date());
+                    this.properties.put(timestampPropertyName, date);
+                } catch (IllegalStateException ise) {
+                    getLog().error("Could not use this date format pattern: '"+timestampPattern+"'.");
+                    throw ise;
+                }
             }
 
             finder = new ResourceFinder(basedir);

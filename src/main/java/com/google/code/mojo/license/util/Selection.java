@@ -27,6 +27,7 @@ import static java.util.Arrays.asList;
 /**
  * <b>Date:</b> 16-Feb-2008<br>
  * <b>Author:</b> Mathieu Carbou (mathieu.carbou@gmail.com)
+ * Modified by the Neo4j team.
  */
 public final class Selection {
 
@@ -157,7 +158,6 @@ public final class Selection {
             "**/target/**",
             "**/test-output/**",
             "**/release.properties",
-            "**/pom.xml",
             "**/dependency-reduced-pom.xml",
 
             // code coverage tools
@@ -169,8 +169,8 @@ public final class Selection {
             "**/.project",
             "**/.settings/**",
 
-            // IDEA projet files
-            "**/*.iml", "**/*.ipr", "**/*.iws",
+            // IDEA project files
+            "**/*.iml", "**/*.ipr", "**/*.iws", "**/.idea",
 
             // descriptors
             "**/MANIFEST.MF",
