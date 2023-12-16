@@ -113,7 +113,7 @@
     <snapshotRepository>
       <id>snapshots@m2.neo4j.org</id>
       <name>snapshots@m2.neo4j.org</name>
-      <url>http://m2.neo4j.org/content/repositories/snapshots</url>
+      <url>https://m2.neo4j.org/content/repositories/snapshots</url>
     </snapshotRepository>
     <site>
       <id>neo4j-site</id>
